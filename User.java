@@ -43,8 +43,13 @@
 
     /** If this user follows the given name, returns true; otherwise returns false. */
     public boolean follows(String name) {
+<<<<<<< HEAD
         for (int i = 0; i < this.fCount; i++) {
              if (this.follows[i].toLowerCase().equals(name.toLowerCase()))
+=======
+        for (int i = 0; i < fCount; i++) {
+            if (follows[i].equals(name))
+>>>>>>> b4f93c9c8ad337dbe5c3d484262e65f597180aab
                 return true;
         }
         return false;
@@ -52,11 +57,16 @@
     /** Makes this user follow the given name. If successful, returns true. 
      *  If this user already follows the given name, or if the follows list is full, does nothing and returns false; */
     public boolean addFollowee(String name) {
+<<<<<<< HEAD
         if (follows(name) || maxfCount == fCount)
             return false;
         int i = 0;
         while (follows[i] != null)
             i++;
+=======
+        if (follows(name) == true || maxfCount == fCount)
+            return false;
+>>>>>>> b4f93c9c8ad337dbe5c3d484262e65f597180aab
         follows[fCount] = name;
         fCount++;
         return true;
@@ -94,7 +104,17 @@
     /** Checks is this user is a friend of the other user.
      *  (if two users follow each other, they are said to be "friends.") */
     public boolean isFriendOf(User other) {
+<<<<<<< HEAD
         return (follows(other.getName()) && other.follows(name));
+=======
+        for (int i = 0; i < fCount; i++) {
+            for (int j = 0; j < other.getfCount(); j++) {
+                if (follows[i].equals(other.getName()) && follows[j].equals(name)) 
+                return true;
+            }   
+        }
+        return false;
+>>>>>>> b4f93c9c8ad337dbe5c3d484262e65f597180aab
     }
     /** Returns this user's name, and the names that s/he follows. */
     public String toString() {
