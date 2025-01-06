@@ -82,9 +82,8 @@
         int count = 0;
         for (int i = 0; i < fCount; i++) {
             for (int j = 0; j < other.getfCount(); j++) {
-                if (follows[i].equals(other.getfFollows()[j])) {
+                if (follows[i].equals(other.getfFollows()[j])) 
                     count++;
-                }
             }
         }
         return count;
@@ -95,6 +94,7 @@
     public boolean isFriendOf(User other) {
         return (follows(other.getName()) && other.follows(name));
     }
+
     /** Returns this user's name, and the names that s/he follows. */
     public String toString() {
         String ans = name + " -> ";
